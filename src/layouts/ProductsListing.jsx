@@ -1,4 +1,4 @@
-import React, {useRef} from 'react'
+import React, {useRef, useState} from 'react'
 import { useSelector, useDispatch } from 'react-redux'; 
 import { addToCart } from '../cartSlice'
 import { Link } from 'react-router';
@@ -6,8 +6,10 @@ import { Link } from 'react-router';
 function ProductsListing() { 
 
   const plants = useSelector((state)=>state.plant);
+  const itemsInCart = useSelector((state)=>state.cart)
   const dispatch = useDispatch();  
 
+ 
   const ref = useRef(null)
 
   const handleAddToCart = (cartItem, category) => { 
@@ -63,7 +65,9 @@ function ProductsListing() {
               <span className="sr-only text-black"> Regular Price </span>
 
               <span className="max-w-15 tracking-wider text-gray-900 bg-green-600 px-4 py-1 rounded text-white font-bold"> {plant.cost} </span>
-              <button ref={ref} className=" tracking-wider text-gray-900 bg-green-600 px-4 py-1 rounded text-white font-bold hover:bg-amber-300" onClick={()=>handleAddToCart({plant, cat_index, plant_index}, category.category)}> add to cart </button>
+              <button disabled = {itemsInCart.some(item=> item.cat_plant_index == `${cat_index}${plant_index}`)? true : false} 
+              ref={ref} 
+              className={`tracking-wider ${!itemsInCart.some(item=> item.cat_plant_index == `${cat_index}${plant_index}`)? "bg-green-600 px-4 py-1 text-white hover:bg-amber-300" : "bg-amber-200 text-gray-500"}  rounded  font-bold `}  onClick={()=>handleAddToCart({plant, cat_index, plant_index}, category.category)}> {!itemsInCart.some(item=> item.cat_plant_index == `${cat_index}${plant_index}`)? "Add to cart": "added"} </button>
             </p>
           </div>
         </article>

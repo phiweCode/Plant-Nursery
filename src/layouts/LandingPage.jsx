@@ -20,7 +20,7 @@ function LandingPage() {
 
           <div class="mt-4 md:mt-8">
             <Link
-              to="/products"
+              to="/Plant-Nursery/products"
               class="inline-block rounded-sm border border-white bg-white px-12 py-3 text-sm font-medium text-green-600 transition hover:bg-transparent hover:text-white focus:ring-3 focus:ring-yellow-400 focus:outline-hidden"
             >
               Get Started Today

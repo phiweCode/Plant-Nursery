@@ -32,13 +32,13 @@ function LandingPage() {
       <div class="grid grid-cols-2 gap-4 md:grid-cols-1 lg:grid-cols-2">
         <img
           alt=""
-          src="public/cleo-stracuzza-avA-YuEe2ZA-unsplash.jpg"
+          src="cleo-stracuzza-avA-YuEe2ZA-unsplash.jpg"
           class="h-40 w-full object-cover sm:h-56 md:h-full"
         />
 
         <img
           alt=""
-          src="public/ceyda-ciftci-dDVU6D_6T80-unsplash.jpg"
+          src="ceyda-ciftci-dDVU6D_6T80-unsplash.jpg"
           class="h-40 w-full object-cover sm:h-56 md:h-full"
         />
       </div>
